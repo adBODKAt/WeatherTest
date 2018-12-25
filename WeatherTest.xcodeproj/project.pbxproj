@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		2D34BD9D981797BCDFBE93CB /* Pods_WeatherTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B52C98FC3D912A014B822AC3 /* Pods_WeatherTest.framework */; };
 		DF70CE5D21D138C5000658C2 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF70CE5C21D138C5000658C2 /* AppCoordinator.swift */; };
+		DF83D4EF21D2000C00EE0455 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF83D4EE21D2000C00EE0455 /* Network.swift */; };
+		DF83D4F121D2003200EE0455 /* WeatherApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF83D4F021D2003200EE0455 /* WeatherApi.swift */; };
+		DF83D4F421D2030400EE0455 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF83D4F321D2030400EE0455 /* WeatherService.swift */; };
+		DF83D4F821D2222400EE0455 /* WeatherApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF83D4F721D2222400EE0455 /* WeatherApiResponse.swift */; };
 		DFC415A021D1260C00224705 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC4159F21D1260C00224705 /* AppDelegate.swift */; };
 		DFC415A221D1260C00224705 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC415A121D1260C00224705 /* ViewController.swift */; };
 		DFC415A521D1260C00224705 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFC415A321D1260C00224705 /* Main.storyboard */; };
@@ -32,6 +36,10 @@
 		3A190AEE84BC06A756DA9912 /* Pods-WeatherTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherTest/Pods-WeatherTest.release.xcconfig"; sourceTree = "<group>"; };
 		B52C98FC3D912A014B822AC3 /* Pods_WeatherTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF70CE5C21D138C5000658C2 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		DF83D4EE21D2000C00EE0455 /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		DF83D4F021D2003200EE0455 /* WeatherApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherApi.swift; sourceTree = "<group>"; };
+		DF83D4F321D2030400EE0455 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
+		DF83D4F721D2222400EE0455 /* WeatherApiResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherApiResponse.swift; sourceTree = "<group>"; };
 		DFC4159C21D1260C00224705 /* WeatherTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFC4159F21D1260C00224705 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFC415A121D1260C00224705 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +91,30 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DF83D4F221D202EE00EE0455 /* services */ = {
+			isa = PBXGroup;
+			children = (
+				DF83D4F321D2030400EE0455 /* WeatherService.swift */,
+			);
+			path = services;
+			sourceTree = "<group>";
+		};
+		DF83D4F521D2220D00EE0455 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				DF83D4F621D2221D00EE0455 /* response */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		DF83D4F621D2221D00EE0455 /* response */ = {
+			isa = PBXGroup;
+			children = (
+				DF83D4F721D2222400EE0455 /* WeatherApiResponse.swift */,
+			);
+			path = response;
+			sourceTree = "<group>";
+		};
 		DFC4159321D1260B00224705 = {
 			isa = PBXGroup;
 			children = (
@@ -107,9 +139,9 @@
 				DFC415B121D126F500224705 /* app */,
 				DFC415B221D1270B00224705 /* controllers */,
 				DFC415BE21D1279F00224705 /* coordinators */,
-				DFC415D221D1291A00224705 /* models */,
+				DF83D4F221D202EE00EE0455 /* services */,
+				DF83D4F521D2220D00EE0455 /* models */,
 				DFC415D321D1292500224705 /* network */,
-				DFC415D421D1293000224705 /* services */,
 				DFC415D521D1294200224705 /* views */,
 				DFC415A121D1260C00224705 /* ViewController.swift */,
 				DFC415A321D1260C00224705 /* Main.storyboard */,
@@ -187,25 +219,13 @@
 			path = base;
 			sourceTree = "<group>";
 		};
-		DFC415D221D1291A00224705 /* models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = models;
-			sourceTree = "<group>";
-		};
 		DFC415D321D1292500224705 /* network */ = {
 			isa = PBXGroup;
 			children = (
+				DF83D4F021D2003200EE0455 /* WeatherApi.swift */,
+				DF83D4EE21D2000C00EE0455 /* Network.swift */,
 			);
 			path = network;
-			sourceTree = "<group>";
-		};
-		DFC415D421D1293000224705 /* services */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = services;
 			sourceTree = "<group>";
 		};
 		DFC415D521D1294200224705 /* views */ = {
@@ -311,14 +331,14 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-WeatherTest/Pods-WeatherTest-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
-				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -335,12 +355,16 @@
 			files = (
 				DFC415B921D1277300224705 /* WeatherView.swift in Sources */,
 				DFC415C721D127DB00224705 /* BaseCoordinator.swift in Sources */,
+				DF83D4EF21D2000C00EE0455 /* Network.swift in Sources */,
 				DFC415C821D127DB00224705 /* Coordinatorable.swift in Sources */,
+				DF83D4F121D2003200EE0455 /* WeatherApi.swift in Sources */,
 				DFC415C921D127DB00224705 /* RouteHandler.swift in Sources */,
 				DFC415C621D127DB00224705 /* Presentable.swift in Sources */,
+				DF83D4F821D2222400EE0455 /* WeatherApiResponse.swift in Sources */,
 				DFC415BB21D1278200224705 /* WeatherViewController.swift in Sources */,
 				DFC415A221D1260C00224705 /* ViewController.swift in Sources */,
 				DFC415BD21D1279000224705 /* WeatherViewModel.swift in Sources */,
+				DF83D4F421D2030400EE0455 /* WeatherService.swift in Sources */,
 				DFC415A021D1260C00224705 /* AppDelegate.swift in Sources */,
 				DFC415D021D128D600224705 /* CoordinatorFactory.swift in Sources */,
 				DFC415B521D1275300224705 /* Weather+Structures.swift in Sources */,
@@ -495,8 +519,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S54H65Q5SR;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = WeatherTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -514,8 +539,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S54H65Q5SR;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = WeatherTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

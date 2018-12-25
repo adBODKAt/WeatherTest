@@ -21,5 +21,12 @@ class MainCoordinator: Coordinator, MainCoordinatorProtocol {
     }
     
     override func start() {
+        do {
+            let moduleInput = WeatherViewModel.ModuleInputData()
+            let (viewController, _) = try WeatherConfigurator.configure(data: moduleInput)
+            self.router.push( viewController )
+        } catch {
+            print("Unexpected error: \(error)")
+        }
     }
 }

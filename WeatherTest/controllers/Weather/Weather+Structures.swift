@@ -7,3 +7,20 @@
 //
 
 import Foundation
+
+extension WeatherViewModel {
+    // MARK: - initial module data
+    struct ModuleInputData {
+        
+    }
+    
+    // MARK: - module input structure
+    struct ModuleInput {
+        
+    }
+    
+    // MARK: - module output structure
+    struct ModuleOutput {
+
+    }
+}

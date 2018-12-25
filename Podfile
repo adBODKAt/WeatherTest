@@ -7,5 +7,5 @@ use_frameworks!
 
 target 'WeatherTest' do
     pod 'Moya'
-    pod 'PromiseKit', '~> 6.0'
+    pod 'ObjectMapper'
 end
