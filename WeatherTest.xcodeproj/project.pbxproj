@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		2D34BD9D981797BCDFBE93CB /* Pods_WeatherTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B52C98FC3D912A014B822AC3 /* Pods_WeatherTest.framework */; };
+		DF228EB921D33C4300598952 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF228EB821D33C4300598952 /* MainModel.swift */; };
+		DF228EBB21D33CF400598952 /* SysModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF228EBA21D33CF400598952 /* SysModel.swift */; };
+		DF228EBD21D33EA600598952 /* WindModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF228EBC21D33EA600598952 /* WindModel.swift */; };
+		DF228EBF21D33F3B00598952 /* CloudModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF228EBE21D33F3B00598952 /* CloudModel.swift */; };
+		DF228EC121D33F6A00598952 /* CoordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF228EC021D33F6A00598952 /* CoordModel.swift */; };
+		DF228EC321D33FE200598952 /* WeatherDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF228EC221D33FE200598952 /* WeatherDataModel.swift */; };
+		DF228EC521D3405500598952 /* CityWeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF228EC421D3405500598952 /* CityWeatherModel.swift */; };
 		DF70CE5D21D138C5000658C2 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF70CE5C21D138C5000658C2 /* AppCoordinator.swift */; };
 		DF83D4EF21D2000C00EE0455 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF83D4EE21D2000C00EE0455 /* Network.swift */; };
 		DF83D4F121D2003200EE0455 /* WeatherApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF83D4F021D2003200EE0455 /* WeatherApi.swift */; };
@@ -35,6 +42,13 @@
 /* Begin PBXFileReference section */
 		3A190AEE84BC06A756DA9912 /* Pods-WeatherTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherTest/Pods-WeatherTest.release.xcconfig"; sourceTree = "<group>"; };
 		B52C98FC3D912A014B822AC3 /* Pods_WeatherTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF228EB821D33C4300598952 /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
+		DF228EBA21D33CF400598952 /* SysModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SysModel.swift; sourceTree = "<group>"; };
+		DF228EBC21D33EA600598952 /* WindModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindModel.swift; sourceTree = "<group>"; };
+		DF228EBE21D33F3B00598952 /* CloudModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudModel.swift; sourceTree = "<group>"; };
+		DF228EC021D33F6A00598952 /* CoordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordModel.swift; sourceTree = "<group>"; };
+		DF228EC221D33FE200598952 /* WeatherDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataModel.swift; sourceTree = "<group>"; };
+		DF228EC421D3405500598952 /* CityWeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityWeatherModel.swift; sourceTree = "<group>"; };
 		DF70CE5C21D138C5000658C2 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		DF83D4EE21D2000C00EE0455 /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		DF83D4F021D2003200EE0455 /* WeatherApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherApi.swift; sourceTree = "<group>"; };
@@ -91,6 +105,28 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DF228EB721D33C2800598952 /* plain */ = {
+			isa = PBXGroup;
+			children = (
+				DF228EC621D3405A00598952 /* weather */,
+			);
+			path = plain;
+			sourceTree = "<group>";
+		};
+		DF228EC621D3405A00598952 /* weather */ = {
+			isa = PBXGroup;
+			children = (
+				DF228EB821D33C4300598952 /* MainModel.swift */,
+				DF228EBA21D33CF400598952 /* SysModel.swift */,
+				DF228EBC21D33EA600598952 /* WindModel.swift */,
+				DF228EBE21D33F3B00598952 /* CloudModel.swift */,
+				DF228EC021D33F6A00598952 /* CoordModel.swift */,
+				DF228EC221D33FE200598952 /* WeatherDataModel.swift */,
+				DF228EC421D3405500598952 /* CityWeatherModel.swift */,
+			);
+			path = weather;
+			sourceTree = "<group>";
+		};
 		DF83D4F221D202EE00EE0455 /* services */ = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +138,7 @@
 		DF83D4F521D2220D00EE0455 /* models */ = {
 			isa = PBXGroup;
 			children = (
+				DF228EB721D33C2800598952 /* plain */,
 				DF83D4F621D2221D00EE0455 /* response */,
 			);
 			path = models;
@@ -354,13 +391,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFC415B921D1277300224705 /* WeatherView.swift in Sources */,
+				DF228EBD21D33EA600598952 /* WindModel.swift in Sources */,
 				DFC415C721D127DB00224705 /* BaseCoordinator.swift in Sources */,
+				DF228EC121D33F6A00598952 /* CoordModel.swift in Sources */,
+				DF228EBF21D33F3B00598952 /* CloudModel.swift in Sources */,
+				DF228EC521D3405500598952 /* CityWeatherModel.swift in Sources */,
 				DF83D4EF21D2000C00EE0455 /* Network.swift in Sources */,
 				DFC415C821D127DB00224705 /* Coordinatorable.swift in Sources */,
 				DF83D4F121D2003200EE0455 /* WeatherApi.swift in Sources */,
 				DFC415C921D127DB00224705 /* RouteHandler.swift in Sources */,
 				DFC415C621D127DB00224705 /* Presentable.swift in Sources */,
 				DF83D4F821D2222400EE0455 /* WeatherApiResponse.swift in Sources */,
+				DF228EB921D33C4300598952 /* MainModel.swift in Sources */,
 				DFC415BB21D1278200224705 /* WeatherViewController.swift in Sources */,
 				DFC415A221D1260C00224705 /* ViewController.swift in Sources */,
 				DFC415BD21D1279000224705 /* WeatherViewModel.swift in Sources */,
@@ -368,7 +410,9 @@
 				DFC415A021D1260C00224705 /* AppDelegate.swift in Sources */,
 				DFC415D021D128D600224705 /* CoordinatorFactory.swift in Sources */,
 				DFC415B521D1275300224705 /* Weather+Structures.swift in Sources */,
+				DF228EC321D33FE200598952 /* WeatherDataModel.swift in Sources */,
 				DFC415CD21D1286C00224705 /* MainCoordinator.swift in Sources */,
+				DF228EBB21D33CF400598952 /* SysModel.swift in Sources */,
 				DF70CE5D21D138C5000658C2 /* AppCoordinator.swift in Sources */,
 				DFC415B721D1276700224705 /* WeatherConfigurator.swift in Sources */,
 				DFC415CB21D127DB00224705 /* Router.swift in Sources */,

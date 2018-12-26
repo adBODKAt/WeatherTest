@@ -6,7 +6,7 @@
 //  Copyright © 2016  Dmitry Avvakumov. All rights reserved.
 //
 import Moya
-import Alamofire
+import ObjectMapper
 
 class Network {
     
@@ -21,19 +21,13 @@ class Network {
 }
 
 extension Network {
-    static func request(_ target: WeatherApi, _ completion: @escaping ((Response?, Error?)->Void)) {
+    static func request(_ target: WeatherApi, _ success: @escaping (Response)->Void, _ failure: @escaping (Error)->Void) {
         provider.request(target) { (result) in
             switch result {
             case .success(let data):
-                do {
-                    let parsed = try data.mapJSON()
-                    print("\(parsed)")
-                    completion(data, nil)
-                } catch {
-                    //
-                }
+                success(data)
             case .failure(let error):
-                completion(nil, error)
+                failure(error)
             }
         }
     }

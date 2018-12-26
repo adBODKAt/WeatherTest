@@ -16,10 +16,11 @@ class WeatherApiResponse: Mappable {
     let apiDomain = "ru.weather"
     
     required init?(map: Map){
-        guard let r = map.JSON["Code"] as? Int else {
-            return nil
-        }
-        result = r
+        result = 0
+//        guard let r = map.JSON["Code"] as? Int else {
+//            return nil
+//        }
+//        result = r
     }
     
     func mapping(map: Map) {
@@ -27,7 +28,7 @@ class WeatherApiResponse: Mappable {
     }
     
     var isSuccess:Bool {
-        get { return result == 0 }
+        get { return true }
     }
     
     func error() -> Error? {

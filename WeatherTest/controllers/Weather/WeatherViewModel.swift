@@ -54,7 +54,11 @@ class WeatherViewModel: WeatherViewOutput {
     func configureModule(input: ModuleInput?) -> ModuleOutput {
         // Configure input signals
         let weatherService = WeatherService()
-        weatherService.loadWeather()
+        weatherService.loadWeather({ (model) in
+            //
+        }) { (error) in
+            //show error
+        }
         // Configure module output
         return ModuleOutput()
     }

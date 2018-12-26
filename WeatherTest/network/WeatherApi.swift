@@ -11,7 +11,7 @@ import UIKit
 import Moya
 
 enum WeatherApi {
-    case getTime
+    case getWeather
 }
 
 // MARK: - Helpers
@@ -34,7 +34,7 @@ extension WeatherApi: TargetType {
     }
     var path: String {
         switch self {
-        case .getTime :
+        case .getWeather :
             return "data/2.5/weather"
         }
     }
@@ -59,7 +59,7 @@ extension WeatherApi: TargetType {
         //1486209
         var params: [String : Any] = [:]
         switch self {
-        case .getTime:
+        case .getWeather:
             params["id"] = 1486209
             params["APPID"] = "3503e5fa85ab3cdc64471a2daa03c819"
             params["units"] = "metric"
@@ -74,8 +74,8 @@ extension WeatherApi: TargetType {
     }
     var headers: [String: String]? {
         switch self {
-        case .getTime:
-            return ["Accept": "application/json", "X-Api-Version" : "1.0"]
+        case .getWeather:
+            return ["Accept": "application/json"]
         }
     }
     var parameterEncoding: Moya.ParameterEncoding {
