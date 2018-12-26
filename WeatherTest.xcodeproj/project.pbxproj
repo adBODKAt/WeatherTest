@@ -15,11 +15,19 @@
 		DF228EC121D33F6A00598952 /* CoordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF228EC021D33F6A00598952 /* CoordModel.swift */; };
 		DF228EC321D33FE200598952 /* WeatherDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF228EC221D33FE200598952 /* WeatherDataModel.swift */; };
 		DF228EC521D3405500598952 /* CityWeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF228EC421D3405500598952 /* CityWeatherModel.swift */; };
+		DF228ED021D3508F00598952 /* TableCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF228ECA21D3508F00598952 /* TableCellProtocol.swift */; };
+		DF228ED221D3508F00598952 /* TableRawProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF228ECD21D3508F00598952 /* TableRawProtocol.swift */; };
+		DF228ED721D3543400598952 /* WeatherMainInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF228ED521D3543400598952 /* WeatherMainInfoCell.swift */; };
+		DF228ED821D3543400598952 /* WeatherMainInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF228ED621D3543400598952 /* WeatherMainInfoCell.xib */; };
+		DF228EDA21D3544400598952 /* WeatherMainInfoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF228ED921D3544400598952 /* WeatherMainInfoRow.swift */; };
+		DF228EDE21D357FA00598952 /* WeatherInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF228EDC21D357FA00598952 /* WeatherInfoCell.swift */; };
+		DF228EDF21D357FA00598952 /* WeatherInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF228EDD21D357FA00598952 /* WeatherInfoCell.xib */; };
+		DF228EE121D3589600598952 /* WeatherInfoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF228EE021D3589600598952 /* WeatherInfoRow.swift */; };
+		DF228EE421D35A2000598952 /* WeatherViewTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF228EE321D35A2000598952 /* WeatherViewTableDataSource.swift */; };
 		DF70CE5D21D138C5000658C2 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF70CE5C21D138C5000658C2 /* AppCoordinator.swift */; };
 		DF83D4EF21D2000C00EE0455 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF83D4EE21D2000C00EE0455 /* Network.swift */; };
 		DF83D4F121D2003200EE0455 /* WeatherApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF83D4F021D2003200EE0455 /* WeatherApi.swift */; };
 		DF83D4F421D2030400EE0455 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF83D4F321D2030400EE0455 /* WeatherService.swift */; };
-		DF83D4F821D2222400EE0455 /* WeatherApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF83D4F721D2222400EE0455 /* WeatherApiResponse.swift */; };
 		DFC415A021D1260C00224705 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC4159F21D1260C00224705 /* AppDelegate.swift */; };
 		DFC415A221D1260C00224705 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC415A121D1260C00224705 /* ViewController.swift */; };
 		DFC415A521D1260C00224705 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFC415A321D1260C00224705 /* Main.storyboard */; };
@@ -49,11 +57,19 @@
 		DF228EC021D33F6A00598952 /* CoordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordModel.swift; sourceTree = "<group>"; };
 		DF228EC221D33FE200598952 /* WeatherDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataModel.swift; sourceTree = "<group>"; };
 		DF228EC421D3405500598952 /* CityWeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityWeatherModel.swift; sourceTree = "<group>"; };
+		DF228ECA21D3508F00598952 /* TableCellProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCellProtocol.swift; sourceTree = "<group>"; };
+		DF228ECD21D3508F00598952 /* TableRawProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableRawProtocol.swift; sourceTree = "<group>"; };
+		DF228ED521D3543400598952 /* WeatherMainInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherMainInfoCell.swift; sourceTree = "<group>"; };
+		DF228ED621D3543400598952 /* WeatherMainInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherMainInfoCell.xib; sourceTree = "<group>"; };
+		DF228ED921D3544400598952 /* WeatherMainInfoRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherMainInfoRow.swift; sourceTree = "<group>"; };
+		DF228EDC21D357FA00598952 /* WeatherInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInfoCell.swift; sourceTree = "<group>"; };
+		DF228EDD21D357FA00598952 /* WeatherInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherInfoCell.xib; sourceTree = "<group>"; };
+		DF228EE021D3589600598952 /* WeatherInfoRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInfoRow.swift; sourceTree = "<group>"; };
+		DF228EE321D35A2000598952 /* WeatherViewTableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewTableDataSource.swift; sourceTree = "<group>"; };
 		DF70CE5C21D138C5000658C2 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		DF83D4EE21D2000C00EE0455 /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		DF83D4F021D2003200EE0455 /* WeatherApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherApi.swift; sourceTree = "<group>"; };
 		DF83D4F321D2030400EE0455 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
-		DF83D4F721D2222400EE0455 /* WeatherApiResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherApiResponse.swift; sourceTree = "<group>"; };
 		DFC4159C21D1260C00224705 /* WeatherTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFC4159F21D1260C00224705 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFC415A121D1260C00224705 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +143,68 @@
 			path = weather;
 			sourceTree = "<group>";
 		};
+		DF228EC721D3503F00598952 /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				DF228ED421D353EC00598952 /* weatherMainInfo */,
+				DF228EDB21D357D800598952 /* weatherInfo */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
+		DF228EC821D3508F00598952 /* protocols */ = {
+			isa = PBXGroup;
+			children = (
+				DF228EC921D3508F00598952 /* tableCell */,
+				DF228ECB21D3508F00598952 /* tableRaw */,
+			);
+			path = protocols;
+			sourceTree = "<group>";
+		};
+		DF228EC921D3508F00598952 /* tableCell */ = {
+			isa = PBXGroup;
+			children = (
+				DF228ECA21D3508F00598952 /* TableCellProtocol.swift */,
+			);
+			path = tableCell;
+			sourceTree = "<group>";
+		};
+		DF228ECB21D3508F00598952 /* tableRaw */ = {
+			isa = PBXGroup;
+			children = (
+				DF228ECD21D3508F00598952 /* TableRawProtocol.swift */,
+			);
+			path = tableRaw;
+			sourceTree = "<group>";
+		};
+		DF228ED421D353EC00598952 /* weatherMainInfo */ = {
+			isa = PBXGroup;
+			children = (
+				DF228ED521D3543400598952 /* WeatherMainInfoCell.swift */,
+				DF228ED621D3543400598952 /* WeatherMainInfoCell.xib */,
+				DF228ED921D3544400598952 /* WeatherMainInfoRow.swift */,
+			);
+			path = weatherMainInfo;
+			sourceTree = "<group>";
+		};
+		DF228EDB21D357D800598952 /* weatherInfo */ = {
+			isa = PBXGroup;
+			children = (
+				DF228EDC21D357FA00598952 /* WeatherInfoCell.swift */,
+				DF228EDD21D357FA00598952 /* WeatherInfoCell.xib */,
+				DF228EE021D3589600598952 /* WeatherInfoRow.swift */,
+			);
+			path = weatherInfo;
+			sourceTree = "<group>";
+		};
+		DF228EE221D359D200598952 /* tableView */ = {
+			isa = PBXGroup;
+			children = (
+				DF228EE321D35A2000598952 /* WeatherViewTableDataSource.swift */,
+			);
+			path = tableView;
+			sourceTree = "<group>";
+		};
 		DF83D4F221D202EE00EE0455 /* services */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,17 +217,8 @@
 			isa = PBXGroup;
 			children = (
 				DF228EB721D33C2800598952 /* plain */,
-				DF83D4F621D2221D00EE0455 /* response */,
 			);
 			path = models;
-			sourceTree = "<group>";
-		};
-		DF83D4F621D2221D00EE0455 /* response */ = {
-			isa = PBXGroup;
-			children = (
-				DF83D4F721D2222400EE0455 /* WeatherApiResponse.swift */,
-			);
-			path = response;
 			sourceTree = "<group>";
 		};
 		DFC4159321D1260B00224705 = {
@@ -179,6 +248,7 @@
 				DF83D4F221D202EE00EE0455 /* services */,
 				DF83D4F521D2220D00EE0455 /* models */,
 				DFC415D321D1292500224705 /* network */,
+				DF228EC821D3508F00598952 /* protocols */,
 				DFC415D521D1294200224705 /* views */,
 				DFC415A121D1260C00224705 /* ViewController.swift */,
 				DFC415A321D1260C00224705 /* Main.storyboard */,
@@ -208,6 +278,7 @@
 		DFC415B321D1272400224705 /* Weather */ = {
 			isa = PBXGroup;
 			children = (
+				DF228EE221D359D200598952 /* tableView */,
 				DFC415B421D1275300224705 /* Weather+Structures.swift */,
 				DFC415B621D1276700224705 /* WeatherConfigurator.swift */,
 				DFC415B821D1277300224705 /* WeatherView.swift */,
@@ -268,6 +339,7 @@
 		DFC415D521D1294200224705 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				DF228EC721D3503F00598952 /* cells */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -333,6 +405,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFC415AA21D1260E00224705 /* LaunchScreen.storyboard in Resources */,
+				DF228ED821D3543400598952 /* WeatherMainInfoCell.xib in Resources */,
+				DF228EDF21D357FA00598952 /* WeatherInfoCell.xib in Resources */,
 				DFC415A721D1260E00224705 /* Assets.xcassets in Resources */,
 				DFC415A521D1260C00224705 /* Main.storyboard in Resources */,
 			);
@@ -390,20 +464,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF228ED021D3508F00598952 /* TableCellProtocol.swift in Sources */,
 				DFC415B921D1277300224705 /* WeatherView.swift in Sources */,
 				DF228EBD21D33EA600598952 /* WindModel.swift in Sources */,
+				DF228EE121D3589600598952 /* WeatherInfoRow.swift in Sources */,
+				DF228ED721D3543400598952 /* WeatherMainInfoCell.swift in Sources */,
 				DFC415C721D127DB00224705 /* BaseCoordinator.swift in Sources */,
 				DF228EC121D33F6A00598952 /* CoordModel.swift in Sources */,
 				DF228EBF21D33F3B00598952 /* CloudModel.swift in Sources */,
 				DF228EC521D3405500598952 /* CityWeatherModel.swift in Sources */,
+				DF228EDA21D3544400598952 /* WeatherMainInfoRow.swift in Sources */,
 				DF83D4EF21D2000C00EE0455 /* Network.swift in Sources */,
 				DFC415C821D127DB00224705 /* Coordinatorable.swift in Sources */,
 				DF83D4F121D2003200EE0455 /* WeatherApi.swift in Sources */,
+				DF228EDE21D357FA00598952 /* WeatherInfoCell.swift in Sources */,
 				DFC415C921D127DB00224705 /* RouteHandler.swift in Sources */,
 				DFC415C621D127DB00224705 /* Presentable.swift in Sources */,
-				DF83D4F821D2222400EE0455 /* WeatherApiResponse.swift in Sources */,
 				DF228EB921D33C4300598952 /* MainModel.swift in Sources */,
 				DFC415BB21D1278200224705 /* WeatherViewController.swift in Sources */,
+				DF228EE421D35A2000598952 /* WeatherViewTableDataSource.swift in Sources */,
 				DFC415A221D1260C00224705 /* ViewController.swift in Sources */,
 				DFC415BD21D1279000224705 /* WeatherViewModel.swift in Sources */,
 				DF83D4F421D2030400EE0455 /* WeatherService.swift in Sources */,
@@ -415,6 +494,7 @@
 				DF228EBB21D33CF400598952 /* SysModel.swift in Sources */,
 				DF70CE5D21D138C5000658C2 /* AppCoordinator.swift in Sources */,
 				DFC415B721D1276700224705 /* WeatherConfigurator.swift in Sources */,
+				DF228ED221D3508F00598952 /* TableRawProtocol.swift in Sources */,
 				DFC415CB21D127DB00224705 /* Router.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

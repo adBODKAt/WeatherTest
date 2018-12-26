@@ -20,6 +20,7 @@ class WeatherService: WeatherServiceProtocol {
             do {
                 if let jsonObject = try JSONSerialization.jsonObject(with: response.data, options: JSONSerialization.ReadingOptions.allowFragments) as? [String: Any],
                     let model = CityWeatherModel(JSON: jsonObject) {
+                    print("\(jsonObject)")
                     completion(model)
                 } else {
                     //generate error
