@@ -11,6 +11,7 @@ import UIKit
 
 protocol WeatherViewOutput {
     func configure(input: WeatherViewModel.Input) -> WeatherViewModel.Output
+    func viewReady()
 }
 
 class WeatherViewModel: WeatherViewOutput {
@@ -22,6 +23,7 @@ class WeatherViewModel: WeatherViewOutput {
     
     struct Input {
         var weatherDataLoaded: ((CityWeatherModel?, Error?)->Void)
+        var loadBlock: ((Bool)->Void)
     }
     
     struct Output {
@@ -33,6 +35,9 @@ class WeatherViewModel: WeatherViewOutput {
     
     // MARK: Properties
     private var weatherDataLoaded: ((CityWeatherModel?, Error?)->Void)? = nil
+    private var loadBlock: ((Bool)->Void)? = nil
+    
+    private let weatherService = WeatherService()
     
     // MARK: - initializer
     init(dependencies: InputDependencies, moduleInputData: ModuleInputData) {
@@ -45,6 +50,7 @@ class WeatherViewModel: WeatherViewOutput {
     func configure(input: Input) -> Output {
         // Configure input
         weatherDataLoaded = input.weatherDataLoaded
+        loadBlock = input.loadBlock
         // Configure output
         return Output()
     }
@@ -53,17 +59,25 @@ class WeatherViewModel: WeatherViewOutput {
     
     func configureModule(input: ModuleInput?) -> ModuleOutput {
         // Configure input signals
-        let weatherService = WeatherService()
-        weatherService.loadWeather({ [weak self] (model) in
-            self?.weatherDataLoaded?(model, nil)
-        }) { [weak self] (error) in
-            self?.weatherDataLoaded?(nil, error)
-        }
         // Configure module output
         return ModuleOutput()
     }
     
     // MARK: - Additional
+    func viewReady() {
+        loadWeatherData()
+    }
+    
+    func loadWeatherData() {
+        loadBlock?(true)
+        weatherService.loadWeather({ [weak self] (model) in
+            self?.loadBlock?(false)
+            self?.weatherDataLoaded?(model, nil)
+        }) { [weak self] (error) in
+            self?.loadBlock?(false)
+            self?.weatherDataLoaded?(nil, error)
+        }
+    }
     
     deinit {
         print("-- AdvertFavoritesViewModel dead")

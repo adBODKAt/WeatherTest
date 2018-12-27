@@ -18,6 +18,12 @@ class WeatherView: UIView {
         table.translatesAutoresizingMaskIntoConstraints = false
         return table
     }()
+    var loadIndicator: UIActivityIndicatorView = {
+        let view = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.gray)
+        view.hidesWhenStopped = true
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     
     override init(frame: CGRect = CGRect.zero) {
         super.init(frame: frame)
@@ -37,9 +43,14 @@ class WeatherView: UIView {
     
     func addSubviews() {
         self.addSubview(tableView)
+        self.addSubview(loadIndicator)
     }
     
     func makeConstraints() {
+        makeTableConstraints()
+        makeLoaderConstraints()
+    }
+    func makeTableConstraints() {
         let leftConstraint = NSLayoutConstraint(item: self.safeAreaLayoutGuide, attribute: NSLayoutConstraint.Attribute.left, relatedBy: NSLayoutConstraint.Relation.equal, toItem: tableView, attribute: NSLayoutConstraint.Attribute.left, multiplier: 1.0, constant: 0.0)
         let rightConstraint = NSLayoutConstraint(item: self.safeAreaLayoutGuide, attribute: NSLayoutConstraint.Attribute.right, relatedBy: NSLayoutConstraint.Relation.equal, toItem: tableView, attribute: NSLayoutConstraint.Attribute.right, multiplier: 1.0, constant: 0.0)
         let bottomConstraint = NSLayoutConstraint(item: self.safeAreaLayoutGuide, attribute: NSLayoutConstraint.Attribute.bottom, relatedBy: NSLayoutConstraint.Relation.equal, toItem: tableView, attribute: NSLayoutConstraint.Attribute.bottom, multiplier: 1.0, constant: 0.0)
@@ -49,5 +60,23 @@ class WeatherView: UIView {
         self.addConstraint(rightConstraint)
         self.addConstraint(bottomConstraint)
         self.addConstraint(topConstraint)
+    }
+    func makeLoaderConstraints() {
+        let centerXConstraint = NSLayoutConstraint(item: self, attribute: NSLayoutConstraint.Attribute.centerX, relatedBy: NSLayoutConstraint.Relation.equal, toItem: loadIndicator, attribute: NSLayoutConstraint.Attribute.centerX, multiplier: 1.0, constant: 0.0)
+        let centerYConstraint = NSLayoutConstraint(item: self, attribute: NSLayoutConstraint.Attribute.centerY, relatedBy: NSLayoutConstraint.Relation.equal, toItem: loadIndicator, attribute: NSLayoutConstraint.Attribute.centerY, multiplier: 1.0, constant: 0.0)
+        
+        self.addConstraint(centerXConstraint)
+        self.addConstraint(centerYConstraint)
+    }
+}
+
+extension WeatherView {
+    func showLoadIndicator() {
+        self.isUserInteractionEnabled = false
+        loadIndicator.startAnimating()
+    }
+    func hideLoadIndicator() {
+        self.isUserInteractionEnabled = true
+        loadIndicator.stopAnimating()
     }
 }

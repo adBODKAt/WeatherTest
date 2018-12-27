@@ -37,6 +37,8 @@ class WeatherViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
         self.configureUI()
         self.configure()
+        
+        self.viewModel?.viewReady()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -45,7 +47,7 @@ class WeatherViewController: UIViewController, UITableViewDataSource {
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
+        return .default
     }
     
     // MARK: - Configuration
@@ -60,8 +62,16 @@ class WeatherViewController: UIViewController, UITableViewDataSource {
         let weatherBlock: ((CityWeatherModel?, Error?) -> Void) = { [weak self] (model, error) in
             self?.acceptData(model, error)
         }
+        let loadBlock: ((Bool) -> Void) = { [customView] (loading) in
+            if loading {
+                customView.showLoadIndicator()
+            } else {
+                customView.hideLoadIndicator()
+            }
+        }
         
-        let input = WeatherViewModel.Input(weatherDataLoaded: weatherBlock)
+        let input = WeatherViewModel.Input(weatherDataLoaded: weatherBlock,
+                                           loadBlock: loadBlock)
         let _ = model.configure(input: input)
 
     }
