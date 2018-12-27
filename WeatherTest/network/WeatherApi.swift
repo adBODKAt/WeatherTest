@@ -1,10 +1,11 @@
 //
-//  Api.swift
-//  Market Core
 //
-//  Created by Dmitry Avvakumov on 05.03.2018.
-//  Copyright © 2018 East Media Ltd. All rights reserved.
 //
+//
+//
+//
+//
+
 
 import Foundation
 import UIKit
@@ -29,7 +30,7 @@ extension WeatherApi: TargetType {
     var baseURL: URL {
         switch self {
         default:
-            return URL(string: "https://api.openweathermap.org")!
+            return URL(string: AppConstant.Api.host)!
         }
     }
     var path: String {
@@ -56,15 +57,13 @@ extension WeatherApi: TargetType {
         return .requestParameters(parameters: (parameters) ?? [:], encoding: parameterEncoding)
     }
     var parameters: [String : Any]? {
-        //1486209
         var params: [String : Any] = [:]
         switch self {
         case .getWeather:
-            params["id"] = 1486209
-            params["APPID"] = "3503e5fa85ab3cdc64471a2daa03c819"
-            params["units"] = "metric"
-            params["lang"] = "ru"
-            //3503e5fa85ab3cdc64471a2daa03c819
+            params["id"] = AppConstant.Api.cityId
+            params["APPID"] = AppConstant.Api.apiKey
+            params["units"] = AppConstant.ApiSettings.units
+            params["lang"] = AppConstant.ApiSettings.lang
         }
         return params
     }

@@ -40,7 +40,7 @@ public struct CityWeatherModel: Mappable, Equatable {
         sys <- map["sys"]
         visibility <- map["visibility"]
         weather <- map["weather"]
-        wind <- map["main"]
+        wind <- map["wind"]
     }
     
     func isNew() -> Bool {

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WeatherViewController: UIViewController {
+class WeatherViewController: UIViewController, UITableViewDataSource {
     
     // MARK: - Properties
     
@@ -18,6 +18,7 @@ class WeatherViewController: UIViewController {
     // Public
     
     // Private
+    private var dataSource = WeatherTableDataModel()
     
     // IBOutlet & UI
     lazy var customView = self.view as? WeatherView
@@ -54,16 +55,49 @@ class WeatherViewController: UIViewController {
             return
         }
         
-        let input = WeatherViewModel.Input()
-        let output = model.configure(input: input)
+        customView.tableView.dataSource = self
+        
+        let weatherBlock: ((CityWeatherModel?, Error?) -> Void) = { [weak self] (model, error) in
+            self?.acceptData(model, error)
+        }
+        
+        let input = WeatherViewModel.Input(weatherDataLoaded: weatherBlock)
+        let _ = model.configure(input: input)
+
     }
     
     private func configureUI() {
+    }
+    
+    private func acceptData(_ model: CityWeatherModel?, _ error: Error?) {
+        guard let customView = self.customView else {
+            return
+        }
+        if let m = model {
+            dataSource.configureWithData(city: m)
+            customView.tableView.reloadData()
+        } else if let err = error {
+            //show error
+            let alert = UIAlertController.init(title: "Ошибка", message: err.localizedDescription, preferredStyle: UIAlertController.Style.alert)
+            let cancelAction = UIAlertAction(title: "Ок", style: UIAlertAction.Style.cancel, handler: nil)
+            
+            alert.addAction(cancelAction)
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     // MARK: - Additional
     
     deinit {
         print("AdvertFavoritesViewController deinit")
+    }
+}
+
+extension WeatherViewController {//TableView Data Source
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dataSource.numberOfRows()
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return dataSource.cellModel(at: indexPath, forTable: tableView)
     }
 }

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol WeatherViewOutput {
     func configure(input: WeatherViewModel.Input) -> WeatherViewModel.Output
@@ -20,7 +21,7 @@ class WeatherViewModel: WeatherViewOutput {
     }
     
     struct Input {
-
+        var weatherDataLoaded: ((CityWeatherModel?, Error?)->Void)
     }
     
     struct Output {
@@ -31,11 +32,9 @@ class WeatherViewModel: WeatherViewOutput {
     private let moduleInputData: ModuleInputData
     
     // MARK: Properties
-    
-    // MARK: Observables
+    private var weatherDataLoaded: ((CityWeatherModel?, Error?)->Void)? = nil
     
     // MARK: - initializer
-    
     init(dependencies: InputDependencies, moduleInputData: ModuleInputData) {
         self.dp = dependencies
         self.moduleInputData = moduleInputData
@@ -45,6 +44,7 @@ class WeatherViewModel: WeatherViewOutput {
     
     func configure(input: Input) -> Output {
         // Configure input
+        weatherDataLoaded = input.weatherDataLoaded
         // Configure output
         return Output()
     }
@@ -54,16 +54,13 @@ class WeatherViewModel: WeatherViewOutput {
     func configureModule(input: ModuleInput?) -> ModuleOutput {
         // Configure input signals
         let weatherService = WeatherService()
-        weatherService.loadWeather({ (model) in
-            //
-        }) { (error) in
-            //show error
+        weatherService.loadWeather({ [weak self] (model) in
+            self?.weatherDataLoaded?(model, nil)
+        }) { [weak self] (error) in
+            self?.weatherDataLoaded?(nil, error)
         }
         // Configure module output
         return ModuleOutput()
-    }
-    
-    func restoreTableData() {
     }
     
     // MARK: - Additional

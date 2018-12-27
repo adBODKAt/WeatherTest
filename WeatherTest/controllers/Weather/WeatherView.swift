@@ -14,7 +14,7 @@ class WeatherView: UIView {
         let table = UITableView()
         table.rowHeight = UITableView.automaticDimension
         table.estimatedRowHeight = 100.0
-        table.separatorStyle = .none
+        table.separatorStyle = .singleLine
         table.translatesAutoresizingMaskIntoConstraints = false
         return table
     }()

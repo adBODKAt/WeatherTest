@@ -1,10 +1,11 @@
 //
-//  Network.swift
-//  Getpass
 //
-//  Created by Dmitry Avvakumov on 06.12.16.
-//  Copyright © 2016  Dmitry Avvakumov. All rights reserved.
 //
+//
+//
+//
+//
+
 import Moya
 import ObjectMapper
 
